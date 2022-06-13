@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams, useState } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { DashboardTypes } from '../../redux/action_types/Dashboard_type';
+import {Button,Table} from 'react-bootstrap';
+
 
 const Dashboard = (props) => {
   let { user } = useParams();
@@ -36,7 +38,7 @@ const Dashboard = (props) => {
       <div>
 
         <div>
-          <table className="table table-striped">
+          <Table striped bordered hover >
             <thead className="thead-dark">
               <tr>
                 <th>First  Name</th>
@@ -61,11 +63,11 @@ const Dashboard = (props) => {
               }
             </tbody>
 
-          </table>
+          </Table>
 
         </div>
       </div>
-      <button onClick={logoutFn}>Logout</button>
+      <Button onClick={logoutFn}>Logout</Button>
     </div>
   )
 }
